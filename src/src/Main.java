@@ -2,6 +2,32 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        calculateGPA(input);
+        calculateVAT(input);
+    }
+
+    public static void calculateVAT(Scanner input) {
+        System.out.println("- Hello -");
+        boolean success = false;
+        while (!success) {
+            try {
+                System.out.print("Enter price of your product: ");
+                double price = input.nextDouble();
+                double vat = price > 1000 ? price * 0.8 : price * 0.18;
+                double totalPrice = price + vat;
+
+                System.out.println("VAT: " + vat);
+                System.out.println("PRICE WITH VAT: " + totalPrice);
+                success = true;
+            } catch (Exception e) {
+                System.out.println("Please enter a valid price!");
+                input.nextLine(); // Clear the invalid input
+            }
+        }
+    }
+
+    public static void calculateGPA(Scanner input) {
 
         System.out.println("- Hello -\nTo calculate your GPA, enter your grades from the courses below ↴");
 
@@ -9,7 +35,6 @@ public class Main {
 
         while (!success) {
             try {
-                Scanner input = new Scanner(System.in);
                 System.out.print("Math Grade: ");
                 int math = input.nextInt();
 
@@ -34,6 +59,7 @@ public class Main {
                 success = true;
             } catch (Exception e) {
                 System.out.println("Please enter a valid note!");
+                input.nextLine(); // Clear the invalid input
             }
         }
     }
