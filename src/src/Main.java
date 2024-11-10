@@ -8,6 +8,19 @@ public class Main {
         calculateHypotenuse(input);
         calculateTaximeter(input);
         calculateAreaAndPerimeterOfCircle(input);
+        calculateBMI(input);
+    }
+
+    public static void calculateBMI(Scanner input) {
+        System.out.println("- Hello -");
+        System.out.print("Please enter your height (in meters): ");
+        double height = input.nextDouble();
+        System.out.print("Please enter your weight: ");
+        double weight = input.nextDouble();
+
+        double BMI = weight / (height * height);
+
+        System.out.println("BMI: " + BMI);
     }
 
     public static void calculateAreaAndPerimeterOfCircle(Scanner input) {
