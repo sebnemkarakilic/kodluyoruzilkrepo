@@ -6,6 +6,17 @@ public class Main {
         calculateGPA(input);
         calculateVAT(input);
         calculateHypotenuse(input);
+        calculateTaximeter(input);
+    }
+
+    public static void calculateTaximeter(Scanner input) {
+        System.out.println("- Hello -");
+        System.out.print("How many kilometers did you travel: ");
+        double km = input.nextDouble();
+        double price = 10 + km * 2.20;
+        price = price < 20 ? 20 : price;
+
+        System.out.println("Total Price: " + price);
     }
 
     public static void calculateHypotenuse(Scanner input) {
