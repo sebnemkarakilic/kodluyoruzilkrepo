@@ -7,6 +7,27 @@ public class Main {
         calculateVAT(input);
         calculateHypotenuse(input);
         calculateTaximeter(input);
+        calculateAreaAndPerimeterOfCircle(input);
+    }
+
+    public static void calculateAreaAndPerimeterOfCircle(Scanner input) {
+        System.out.println("- Hello -");
+        System.out.print("Radius of Circle: ");
+        double radius = input.nextDouble();
+
+        double area = Math.PI * radius * radius;
+        double perimeter = 2 * Math.PI * radius;
+
+        System.out.println("Area of the Circle: " + area);
+        System.out.println("Perimeter of the Circle: " + perimeter);
+
+        System.out.print("Angle of Circle Slice: ");
+        double angle = input.nextDouble();
+
+        double areaOfCircleSlice = area * angle / 360;
+
+        System.out.println("Area of the slice: " + areaOfCircleSlice);
+
     }
 
     public static void calculateTaximeter(Scanner input) {
