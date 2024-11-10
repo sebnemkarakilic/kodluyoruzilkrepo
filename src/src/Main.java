@@ -5,6 +5,19 @@ public class Main {
         Scanner input = new Scanner(System.in);
         calculateGPA(input);
         calculateVAT(input);
+        calculateHypotenuse(input);
+    }
+
+    public static void calculateHypotenuse(Scanner input) {
+        System.out.println("- Hello -");
+        System.out.print("Enter 1. Side of triangle: ");
+        double firstSide = input.nextDouble();
+        System.out.print("Enter 2. Side of triangle: ");
+        double secondSide = input.nextDouble();
+
+        double hypotenuse = Math.sqrt((firstSide * firstSide) + (secondSide * secondSide));
+        System.out.println("Hypotenuses = " + hypotenuse);
+
     }
 
     public static void calculateVAT(Scanner input) {
