@@ -9,6 +9,31 @@ public class Main {
         calculateTaximeter(input);
         calculateAreaAndPerimeterOfCircle(input);
         calculateBMI(input);
+        calculateGreenGrocerPrice(input);
+    }
+
+    public static void calculateGreenGrocerPrice(Scanner input) {
+        System.out.println("- Hello -");
+
+        System.out.print("How Many Kilos Pear: ");
+        double pearPrice = input.nextDouble() * 2.14;
+
+        System.out.print("How Many Kilos Apple: ");
+        double applePrice = input.nextDouble() * 3.67;
+
+        System.out.print("How Many Kilos Tomato: ");
+        double tomatoPrice = input.nextDouble() * 1.11;
+
+        System.out.print("How Many Kilos Banana: ");
+        double bananaPrice = input.nextDouble() * 0.95;
+
+        System.out.print("How Many Kilos Eggplant: ");
+        double eggplantPrice = input.nextDouble() * 5;
+
+        double totalPrice = pearPrice + applePrice + tomatoPrice + bananaPrice + eggplantPrice;
+
+        System.out.println("Total Price: " + totalPrice);
+
     }
 
     public static void calculateBMI(Scanner input) {
