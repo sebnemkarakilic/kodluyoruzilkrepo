@@ -13,6 +13,20 @@ public class Main {
         switchCaseCalculator(input);
         loginUser(input);
         calculateClassPassingStatus(input);
+        recommendingActivitiesBasedOnAirTemperature(input);
+
+    }
+
+    public static void recommendingActivitiesBasedOnAirTemperature(Scanner input) {
+        System.out.println("- Recommending Activities Based on Air Temperature System -");
+
+        System.out.print("Enter the Heat: ");
+        int heat = input.nextInt();
+
+        if (heat < 5) System.out.println("SKI");
+        if (heat >= 5 && heat < 15) System.out.println("CINEMA");
+        if (heat >= 15 && heat < 25) System.out.println("PICNIC");
+        if (heat >= 25) System.out.println("SWIMMING");
 
     }
 
