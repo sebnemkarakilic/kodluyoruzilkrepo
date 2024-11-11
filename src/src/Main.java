@@ -16,7 +16,51 @@ public class Main {
         recommendingActivitiesBasedOnAirTemperature(input);
         sortingFromLargestToSmallest(input);
         findingHoroscope(input);
+        calculateFlightTicketPrice(input);
 
+    }
+
+    public static void calculateFlightTicketPrice(Scanner input) {
+        System.out.println("- Welcome to Flight Ticket Price Calculation Program - ");
+
+        System.out.print("Enter the distance in km: ");
+        int km = input.nextInt();
+        while (km <= 0) {
+            System.out.println("Invalid value...");
+            System.out.print("Enter the distance in km: ");
+            km = input.nextInt();
+        }
+
+        System.out.print("Enter your age: ");
+        int age = input.nextInt();
+        while (age <= 0) {
+            System.out.println("Invalid value...");
+            System.out.print("Enter your age: ");
+            age = input.nextInt();
+        }
+
+        System.out.print("Enter the type of trip (1 => One Way, 2 => Round Trip): ");
+        int tripType = input.nextInt();
+        while (tripType != 1 && tripType != 2) {
+            System.out.println("Invalid value...");
+            System.out.print("Enter the type of trip (1 => One Way, 2 => Round Trip): ");
+            tripType = input.nextInt();
+        }
+
+        double flightPrice = km * 0.10;
+
+        if (age < 12) {
+            flightPrice = flightPrice - (flightPrice / 2);
+        } else if (age <= 24) {
+            flightPrice = flightPrice - (flightPrice * 0.10);
+        } else if (age >= 65) {
+            flightPrice = flightPrice - (flightPrice * 0.30);
+        }
+        if (tripType == 2) {
+            flightPrice = (flightPrice - (flightPrice * 0.20)) * 2;
+        }
+
+        System.out.println("Total Amount: " + flightPrice);
     }
 
     public static void findingHoroscope(Scanner input) {
