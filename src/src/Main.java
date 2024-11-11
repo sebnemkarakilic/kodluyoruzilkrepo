@@ -11,7 +11,54 @@ public class Main {
         calculateBMI(input);
         calculateGreenGrocerPrice(input);
         switchCaseCalculator(input);
+        loginUser(input);
     }
+
+    public static void loginUser(Scanner scanner) {
+        System.out.println("- Welcome to User Login System -");
+
+        // Create profile
+        System.out.println("- Create Your Profile -");
+        System.out.print("Enter a username: ");
+        String username = scanner.nextLine().trim();
+        System.out.print("Enter a password: ");
+        String password = scanner.nextLine().trim();
+
+        // Login attempt
+        System.out.println("\n- Login to Your Profile -");
+        System.out.print("Username: ");
+        String enteredUsername = scanner.nextLine().trim();
+        System.out.print("Password: ");
+        String enteredPassword = scanner.nextLine().trim();
+
+        // Check credentials
+        if (enteredUsername.equals(username) && enteredPassword.equals(password)) {
+            System.out.println("Login successful! Welcome to your profile.");
+        } else {
+            System.out.println("Incorrect username or password.");
+            System.out.println("Forgot password?\n1. YES\n2. NO");
+
+            try {
+                int choice = Integer.parseInt(scanner.nextLine().trim());
+                if (choice == 1) {
+                    System.out.print("Enter a new password: ");
+                    String newPassword = scanner.nextLine().trim();
+
+                    while (newPassword.equals(password)) {
+                        System.out.println("You cannot use your old password. Choose a different one:");
+                        newPassword = scanner.nextLine().trim();
+                    }
+
+                    System.out.println("Password reset successful! Welcome to your profile.");
+                } else {
+                    System.out.println("Exiting. See you!");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Exiting.");
+            }
+        }
+    }
+
 
     public static void switchCaseCalculator(Scanner input){
         System.out.println("- Welcome to Switch Case Calculator -");
