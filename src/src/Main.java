@@ -10,6 +10,38 @@ public class Main {
         calculateAreaAndPerimeterOfCircle(input);
         calculateBMI(input);
         calculateGreenGrocerPrice(input);
+        switchCaseCalculator(input);
+    }
+
+    public static void switchCaseCalculator(Scanner input){
+        System.out.println("- Welcome to Switch Case Calculator -");
+
+        int result;
+        System.out.print("Enter the first number: ");
+        int firstNumber = input.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int secondNumber = input.nextInt();
+
+        System.out.println("1. Addition\n2. Deletion\n3. Division\n4. Multiplication");
+        System.out.print("Select: ");
+        int select = input.nextInt();
+
+        switch (select) {
+            case 1: result = firstNumber+secondNumber;
+                System.out.print("Result of addition: " + result);
+                break;
+            case 2: result = firstNumber-secondNumber;
+                System.out.print("Result of deletion: " + result);
+                break;
+            case 3: result = firstNumber/secondNumber;
+                System.out.print("Result of division: " + result);
+                break;
+            case 4: result = firstNumber*secondNumber;
+                System.out.print("Result of multiplication: " + result);
+                break;
+            default: System.out.print("Invalid choice!");
+        }
     }
 
     public static void calculateGreenGrocerPrice(Scanner input) {
