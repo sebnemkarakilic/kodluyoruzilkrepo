@@ -12,6 +12,60 @@ public class Main {
         calculateGreenGrocerPrice(input);
         switchCaseCalculator(input);
         loginUser(input);
+        calculateClassPassingStatus(input);
+
+    }
+
+    public static void calculateClassPassingStatus(Scanner input) {
+        System.out.println("- Calculating Class Passing Status System -");
+
+        int validLessonCount = 0;
+        int total = 0;
+
+        System.out.print("Math Grade: ");
+        int math = input.nextInt();
+        if (math > 0 && math < 100) {
+            validLessonCount++;
+            total += math;
+        }
+
+        System.out.print("Physics Grade: ");
+        int physics = input.nextInt();
+        if (physics > 0 && physics < 100) {
+            validLessonCount++;
+            total += physics;
+        }
+
+        System.out.print("Turkish Grade: ");
+        int turkish = input.nextInt();
+        if (turkish > 0 && turkish < 100) {
+            validLessonCount++;
+            total += turkish;
+        }
+
+        System.out.print("Chemistry Grade: ");
+        int chemistry = input.nextInt();
+        if (chemistry > 0 && chemistry < 100) {
+            validLessonCount++;
+            total += chemistry;
+        }
+
+        System.out.print("Music Grade: ");
+        int music = input.nextInt();
+        if (music > 0 && music < 100) {
+            validLessonCount++;
+            total += music;
+        }
+
+        double avg = (double) total / validLessonCount;
+
+        if (avg >= 55) {
+            System.out.println("You passed the class!\nYour GPA: " + avg);
+        } else {
+            System.out.println("You failed the class!\nYour GPA: " + avg);
+        }
+
+
     }
 
     public static void loginUser(Scanner scanner) {
