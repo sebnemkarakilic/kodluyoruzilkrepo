@@ -14,7 +14,43 @@ public class Main {
         loginUser(input);
         calculateClassPassingStatus(input);
         recommendingActivitiesBasedOnAirTemperature(input);
+        sortingFromLargestToSmallest(input);
 
+    }
+
+    public static void sortingFromLargestToSmallest(Scanner input){
+        System.out.println("- Sorting from Largest to Smallest System -");
+
+        int temp;
+
+        System.out.print("Enter 1. Number: ");
+        int number1 = input.nextInt();
+
+        System.out.print("Enter 2. Number: ");
+        int number2 = input.nextInt();
+
+        System.out.print("Enter 3. Number: ");
+        int number3 = input.nextInt();
+
+        if (number1 < number2) {
+            temp = number1;
+            number1 = number2;
+            number2 = temp;
+        }
+
+        if (number1 < number3) {
+            temp = number1;
+            number1 = number3;
+            number3 = temp;
+        }
+
+        if (number2 < number3) {
+            temp = number2;
+            number2 = number3;
+            number3 = temp;
+        }
+
+        System.out.println("SORTED NUMBERS: " + number1 + ", " + number2 + ", " + number3);
     }
 
     public static void recommendingActivitiesBasedOnAirTemperature(Scanner input) {
