@@ -15,7 +15,46 @@ public class Main {
         calculateClassPassingStatus(input);
         recommendingActivitiesBasedOnAirTemperature(input);
         sortingFromLargestToSmallest(input);
+        findingHoroscope(input);
 
+    }
+
+    public static void findingHoroscope(Scanner input) {
+        System.out.println("- Welcome to Horoscope Finding Program - ");
+
+        System.out.print("Month you born: ");
+        int month = input.nextInt();
+
+        System.out.print("Day you born: ");
+        int day = input.nextInt();
+
+        if ((day >= 21 && day <= 31 && month == 3) || (day >= 1 && day <= 20 && month == 4)) {
+            System.out.println("Aries");
+        } else if ((day >= 21 && day <= 30 && month == 4) || (day >= 1 && day <= 21 && month == 5)) {
+            System.out.println("Taurus");
+        } else if ((day >= 22 && day <= 31 && month == 5) || (day >= 1 && day <= 22 && month == 6)) {
+            System.out.println("Gemini");
+        } else if ((day >= 23 && day <= 30 && month == 6) || (day >= 1 && day <= 22 && month == 7)) {
+            System.out.println("Cancer");
+        } else if ((day >= 23 && day <= 31 && month == 7) || (day >= 1 && day <= 22 && month == 8)) {
+            System.out.println("Leo");
+        } else if ((day >= 23 && day <= 31 && month == 8) || (day >= 1 && day <= 22 && month == 9)) {
+            System.out.println("Virgo");
+        } else if ((day >= 23 && day <= 30 && month == 9) || (day >= 1 && day <= 22 && month == 10)) {
+            System.out.println("Libra");
+        } else if ((day >= 23 && day <= 31 && month == 10) || (day >= 1 && day <= 21 && month == 11)) {
+            System.out.println("Scorpio");
+        } else if ((day >= 22 && day <= 30 && month == 11) || (day >= 1 && day <= 21 && month == 12)) {
+            System.out.println("Sagittarius");
+        } else if ((day >= 22 && day <= 30 && month == 12) || (day >= 1 && day <= 21 && month == 1)) {
+            System.out.println("Capricorn");
+        } else if ((day >= 22 && day <= 30 && month == 1) || (day >= 1 && day <= 19 && month == 2)) {
+            System.out.println("Aquarius");
+        } else if ((day >= 20 && day <= 30 && month == 2) || (day >= 1 && day <= 20 && month == 3)) {
+            System.out.println("Pisces");
+        } else {
+            System.out.println("Not a valid date...");
+        }
     }
 
     public static void sortingFromLargestToSmallest(Scanner input){
