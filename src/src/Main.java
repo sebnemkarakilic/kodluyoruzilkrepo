@@ -18,7 +18,21 @@ public class Main {
         findingHoroscope(input);
         calculateFlightTicketPrice(input);
         calculateChineseZodiac(input);
+        calculateLeapYear(input);
 
+    }
+
+    public static void calculateLeapYear(Scanner input) {
+        System.out.println("- Welcome to Leap Year Calculation Program - ");
+
+        System.out.print("Enter the year: ");
+        int year = input.nextInt();
+
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + " is a leap year!");
+        } else {
+            System.out.println(year + " is not a leap year!");
+        }
     }
 
     public static void calculateChineseZodiac(Scanner input){
