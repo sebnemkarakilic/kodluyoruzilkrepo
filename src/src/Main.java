@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        calculateTheSumOfTheDigitsOfANumber(input);
         calculateExponentialNumbers(input);
         calculateFactorial(input);
         findPowersOf2LessThanEnteredNumber(input);
@@ -28,8 +29,26 @@ public class Main {
 
     }
 
+    //Program to calculate the sum of the digits of a number
+    public static void calculateTheSumOfTheDigitsOfANumber(Scanner input) {
+        System.out.println("- Calculate the sum of the digits of a number Program - ");
+
+        System.out.print("Enter the number: ");
+        int num = input.nextInt();
+        int sum = 0;
+
+        while (num != 0) {
+            sum = sum + num % 10;
+            num = num / 10;
+        }
+
+        System.out.println(sum);
+    }
+
     //Calculate Exponential Numbers Program
     public static void calculateExponentialNumbers(Scanner input) {
+        System.out.println("- Calculate Exponential Numbers Program - ");
+
         System.out.print("Enter the value of number: ");
         int num = input.nextInt();
         System.out.print("Enter the value of exponent: ");
@@ -44,6 +63,8 @@ public class Main {
 
     //Program to Calculate Factorial
     public static void calculateFactorial(Scanner input) {
+        System.out.println("- Calculate Factorial Program - ");
+
         System.out.print("Enter the value of n (total elements): ");
         int n = input.nextInt();
         System.out.print("Enter the value of r (size of the group): ");
