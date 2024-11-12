@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        findPowersOf2LessThanEnteredNumber(input);
         addTheEvenNumbersAndMultiplesOf4FromEnteredNumbers(input);
         findEvenNumbersUpToEnteredNumber(input);
         calculateLeapYear(input);
@@ -23,6 +24,23 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    //Program to Find Powers of 2 Less Than Entered Number
+    public static void findPowersOf2LessThanEnteredNumber(Scanner input) {
+        System.out.println("- Program to Find Powers of 2 Less Than Entered Number - ");
+
+        System.out.print("Enter a number: ");
+        int num = input.nextInt();
+
+        for (int i = 1; i < num; i *= 2) {
+            System.out.println("Power of 2: " + i);
+        }
+
+        for (int i = 1, j = 1; i < num && j < num; i *= 4, j *= 5) {
+            System.out.println("Power of 4: " + i);
+            System.out.println("Power of 5: " + j);
+        }
     }
 
     //Program to adds the numbers that are even and multiples of 4 from the entered values
