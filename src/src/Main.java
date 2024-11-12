@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        makeDiamondFromStars(input);
+        makeTriangleFromStars(input);
         findHarmonicNumbers(input);
         calculateTheSumOfTheDigitsOfANumber(input);
         calculateExponentialNumbers(input);
@@ -27,6 +29,70 @@ public class Main {
         calculateHypotenuse(input);
         calculateVAT(input);
         calculateGPA(input);
+
+    }
+
+    //Make Triangle from stars
+    public static void makeTriangleFromStars(Scanner input) {
+        System.out.print("Enter a number :");
+        int num = input.nextInt();
+
+        for (int i = 0; i <= num; i++) {
+            for (int j = 0; j < (num - i); j++) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k <= (2 * i); k++) {
+                System.out.print("*");
+            }
+            System.out.println(" ");
+        }
+
+    }
+
+    //Make a Diamond from stars
+    public static void makeDiamondFromStars(Scanner input) {
+        //       *
+        //      ***
+        //     *****
+        //    *******
+        //   *********
+        //  ***********
+        // *************
+        //  ***********
+        //   *********
+        //    *******
+        //     *****
+        //      ***
+        //       *
+
+        System.out.print("Enter a number :");
+        int num = input.nextInt();
+
+        // Upper part of the diamond
+        for (int i = 0; i < num; i++) {
+            // Print spaces for the upper part
+            for (int j = 0; j < (num - i - 1); j++) {
+                System.out.print(" ");
+            }
+            // Print stars for the upper part
+            for (int k = 0; k < (2 * i + 1); k++) {
+                System.out.print("*");
+            }
+            System.out.println();  // Move to the next line
+        }
+
+        // Lower part of the diamond
+        for (int i = num - 2; i >= 0; i--) {
+            // Print spaces for the lower part
+            for (int j = 0; j < (num - i - 1); j++) {
+                System.out.print(" ");
+            }
+            // Print stars for the lower part
+            for (int k = 0; k < (2 * i + 1); k++) {
+                System.out.print("*");
+            }
+            System.out.println();  // Move to the next line
+        }
 
     }
 
