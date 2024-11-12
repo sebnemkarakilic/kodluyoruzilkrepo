@@ -31,9 +31,26 @@ public class Main {
         System.out.print("Enter a number: ");
         int num = input.nextInt();
 
+        int sum = 0, count = 0;
+
+        System.out.print("Even numbers: ");
+
         for (int i = 0; i <= num; i += 2) {
             System.out.print(i + " ");
         }
+        System.out.println();
+        for (int i = 0; i <= num; i += 12) {
+            sum = sum + i;
+            count++;
+        }
+
+        if (count > 0) {
+            double average = (double) sum / count;
+            System.out.println("Average of numbers divisible by 3 and 4: " + (int) average);
+        } else {
+            System.out.println("No number found that is divisible by 3 and 4.");
+        }
+
     }
 
     public static void calculateLeapYear(Scanner input) {
