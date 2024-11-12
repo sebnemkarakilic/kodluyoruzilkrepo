@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        reverseTriangle(input);
         perfectNumber(input);
         findMinAndMax(input);
         findEBOBEKOK(input);
@@ -34,6 +35,26 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    public static void reverseTriangle(Scanner input) {
+        // *************
+        // ***********
+        // *********
+        // *******
+        // *****
+        // ***
+        // *
+
+        System.out.print("Enter a number: ");
+        int num = input.nextInt();
+
+        for (int i = 0; i < num; i++) {
+            for (int k = 1; k < 2 * num - 2 * i; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 
     public static void perfectNumber(Scanner input) {
