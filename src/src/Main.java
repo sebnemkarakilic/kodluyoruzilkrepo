@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        calculateFactorial(input);
         findPowersOf2LessThanEnteredNumber(input);
         addTheEvenNumbersAndMultiplesOf4FromEnteredNumbers(input);
         findEvenNumbersUpToEnteredNumber(input);
@@ -24,6 +25,25 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    //Program to Calculate Factorial
+
+    public static void calculateFactorial(Scanner input) {
+        System.out.print("Enter the value of n (total elements): ");
+        int n = input.nextInt();
+        System.out.print("Enter the value of r (size of the group): ");
+        int r = input.nextInt();
+
+        //C(n,r) = n! / (r! * (n-r)!)
+
+        int result = 1;
+        // Calculate n! / (r! * (n - r)!)
+        for (int i = 1; i <= r; i++) {
+            result *= n--;
+            result /= i;
+        }
+        System.out.println("C(" + n + ", " + r + ") = " + result);
     }
 
     //Program to Find Powers of 2 Less Than Entered Number
