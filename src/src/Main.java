@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        fibonacci(input);
         findPrimeNumbers();
         reverseTriangle(input);
         perfectNumber(input);
@@ -36,6 +37,22 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    public static void fibonacci(Scanner input) {
+        System.out.print("Enter a number: ");
+        int num = input.nextInt();
+        int first = 0;
+        int second = 1;
+        for (int i = 0; i < num; i++) {
+            System.out.print(first + " ");
+
+            int next = first + second;
+            first = second;
+            second = next;
+        }
+
+        System.out.println("\n----------------");
     }
 
     public static void findPrimeNumbers() {
