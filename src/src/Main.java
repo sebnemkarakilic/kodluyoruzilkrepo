@@ -3,23 +3,37 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        calculateGPA(input);
-        calculateVAT(input);
-        calculateHypotenuse(input);
-        calculateTaximeter(input);
-        calculateAreaAndPerimeterOfCircle(input);
-        calculateBMI(input);
-        calculateGreenGrocerPrice(input);
-        switchCaseCalculator(input);
-        loginUser(input);
-        calculateClassPassingStatus(input);
-        recommendingActivitiesBasedOnAirTemperature(input);
-        sortingFromLargestToSmallest(input);
-        findingHoroscope(input);
-        calculateFlightTicketPrice(input);
-        calculateChineseZodiac(input);
-        calculateLeapYear(input);
 
+        findEvenNumbersUpToEnteredNumber(input);
+        calculateLeapYear(input);
+        calculateChineseZodiac(input);
+        calculateFlightTicketPrice(input);
+        findingHoroscope(input);
+        sortingFromLargestToSmallest(input);
+        recommendingActivitiesBasedOnAirTemperature(input);
+        calculateClassPassingStatus(input);
+        loginUser(input);
+        switchCaseCalculator(input);
+        calculateGreenGrocerPrice(input);
+        calculateBMI(input);
+        calculateAreaAndPerimeterOfCircle(input);
+        calculateTaximeter(input);
+        calculateHypotenuse(input);
+        calculateVAT(input);
+        calculateGPA(input);
+
+    }
+
+    //Program to Find Even Numbers Up to Entered Number
+    public static void findEvenNumbersUpToEnteredNumber(Scanner input) {
+        System.out.println("- Program to Find Even Numbers Up to Entered Number - ");
+
+        System.out.print("Enter a number: ");
+        int num = input.nextInt();
+
+        for (int i = 0; i <= num; i += 2) {
+            System.out.print(i + " ");
+        }
     }
 
     public static void calculateLeapYear(Scanner input) {
