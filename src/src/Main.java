@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        findHarmonicNumbers(input);
         calculateTheSumOfTheDigitsOfANumber(input);
         calculateExponentialNumbers(input);
         calculateFactorial(input);
@@ -27,6 +28,27 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    //Program to Find Harmonic Numbers
+    public static void findHarmonicNumbers(Scanner input) {
+        System.out.println("- Program to Find Harmonic Numbers - ");
+
+        System.out.print("Enter the number: ");
+        int num = input.nextInt();
+        double sum = 0;
+
+        for (int i = 1; i <= num; i++) {
+            if (i == num) {
+                System.out.print("1/" + i);
+            } else if (i == 1) {
+                System.out.print(i + " + ");
+            } else {
+                System.out.print("1/" + i + " + ");
+            }
+            sum += ((double) 1 / i);
+        }
+        System.out.println("\nSum: " + sum);
     }
 
     //Program to calculate the sum of the digits of a number
