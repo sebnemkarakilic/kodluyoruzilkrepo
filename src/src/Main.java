@@ -28,7 +28,6 @@ public class Main {
     }
 
     //Program to Calculate Factorial
-
     public static void calculateFactorial(Scanner input) {
         System.out.print("Enter the value of n (total elements): ");
         int n = input.nextInt();
