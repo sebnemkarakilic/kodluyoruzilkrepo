@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        addTheEvenNumbersAndMultiplesOf4FromEnteredNumbers(input);
         findEvenNumbersUpToEnteredNumber(input);
         calculateLeapYear(input);
         calculateChineseZodiac(input);
@@ -22,6 +23,20 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    //Program to adds the numbers that are even and multiples of 4 from the entered values
+    public static void addTheEvenNumbersAndMultiplesOf4FromEnteredNumbers(Scanner input) {
+        System.out.println("- Program to adds the numbers that are even and multiples of 4 from the entered values - ");
+
+        int sum = 0;
+        while (true) {
+            System.out.println("Enter number (for exit enter 0): ");
+            int num = input.nextInt();
+            if (num % 4 == 0) sum += num;
+            if (num == 0) break;
+        }
+        System.out.println("Result: " + sum);
     }
 
     //Program to Find Even Numbers Up to Entered Number
