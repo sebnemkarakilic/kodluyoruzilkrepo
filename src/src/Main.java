@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-
+        findMinAndMax(input);
         findEBOBEKOK(input);
         ATM(input);
         makeDiamondFromStars(input);
@@ -33,6 +33,29 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    public static void findMinAndMax(Scanner input) {
+        System.out.print("How many number will you enter: ");
+        int numCount = input.nextInt();
+
+        System.out.print("Enter 1. Number: ");
+        int num = input.nextInt();
+        int min = num;
+        int max = num;
+
+        for (int i = 2; i <= numCount; i++) {
+            System.out.print("Enter " + i + ". Number: ");
+            num = input.nextInt();
+            if (num > max) {
+                max = num;
+            }
+            if (num < min) {
+                min = num;
+            }
+        }
+        System.out.println("MIN: " + min);
+        System.out.println("MAX: " + max);
     }
 
     public static void findEBOBEKOK(Scanner input) {
