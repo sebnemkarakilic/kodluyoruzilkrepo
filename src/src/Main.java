@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        calculateExponentialNumbers(input);
         calculateFactorial(input);
         findPowersOf2LessThanEnteredNumber(input);
         addTheEvenNumbersAndMultiplesOf4FromEnteredNumbers(input);
@@ -25,6 +26,20 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    //Calculate Exponential Numbers Program
+    public static void calculateExponentialNumbers(Scanner input) {
+        System.out.print("Enter the value of number: ");
+        int num = input.nextInt();
+        System.out.print("Enter the value of exponent: ");
+        int exp = input.nextInt();
+
+        int result = 1;
+        for (int i = 1; i <= exp; i++) {
+            result = result * num;
+        }
+        System.out.println(result);
     }
 
     //Program to Calculate Factorial
