@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        perfectNumber(input);
         findMinAndMax(input);
         findEBOBEKOK(input);
         ATM(input);
@@ -33,6 +34,19 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    public static void perfectNumber(Scanner input) {
+        System.out.print("Enter a number: ");
+        int num = input.nextInt();
+        int sum = 0;
+        for (int i = 1; i < num; i++) {
+            if (num % i == 0) {
+                sum += i;
+            }
+        }
+        if (sum == num) System.out.println(num + " is a perfect number.");
+        if (sum != num) System.out.println(num + " is not a perfect number.");
     }
 
     public static void findMinAndMax(Scanner input) {
