@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+
+        findEBOBEKOK(input);
         ATM(input);
         makeDiamondFromStars(input);
         makeTriangleFromStars(input);
@@ -31,6 +33,27 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    public static void findEBOBEKOK(Scanner input) {
+        System.out.print("Enter a number 1: ");
+        int num1 = input.nextInt();
+
+        System.out.print("Enter a number 2: ");
+        int num2 = input.nextInt();
+
+        int i = 2;
+        int ebob = 0;
+
+        while (i <= num1) {
+            if (num1 % i == 0 && num2 % i == 0) {
+                ebob = i;
+            }
+            i++;
+        }
+        System.out.println("EBOB: " + ebob);
+        int ekok = (num1 * num2) / ebob;
+        System.out.println("EKOK: " + ekok);
     }
 
     //ATM
