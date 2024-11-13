@@ -4,6 +4,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        System.out.print("Enter base number: ");
+        int base = input.nextInt();
+        System.out.print("Enter exponent number: ");
+        int exponent = input.nextInt();
+        int result = calculatePowerRecursively(base, exponent);
+        System.out.println("Result: " + result);
+
         advancedCalculator(input);
 
         for (int i = 0; i < 10; i++) {
@@ -45,6 +52,13 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    public static int calculatePowerRecursively(int base, int exponent) {
+        if (exponent == 0) {
+            return 1;
+        }
+        return base * calculatePowerRecursively(base, exponent - 1);
     }
 
 
