@@ -4,6 +4,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        modifyNumberRecursively(20,20, false);
+
+        System.out.println();
+
         System.out.print("Enter to check prime number: ");
         int primeNum = input.nextInt();
         primeNumberRecursively(primeNum, 2);
@@ -58,6 +62,43 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    public static void modifyNumberRecursively(int temp, int original, boolean addingBack) {
+        // Print the current value
+        System.out.print(temp + " ");
+
+        // Base case: Stop if we've returned to the original value after adding phase
+        if (temp == original && addingBack) {
+            return;
+        }
+
+        // Recursion: Subtract or add based on the current phase
+        if (temp > 0 && !addingBack) {
+            // Subtract 5 until temp is 0 or negative
+            modifyNumberRecursively(temp - 5, original, false);
+        } else {
+            // Add 5 until reaching the original number
+            modifyNumberRecursively(temp + 5, original, true);
+        }
+    }
+
+    /*
+    *   Explanation
+        Additional Parameter (addingBack): This parameter tracks whether we’re in the subtracting phase (false) or the adding phase (true).
+        Termination Condition: Only stop if temp == original and we are in the adding phase (addingBack == true), which ensures we have completed both the subtraction and addition phases.
+
+        Recursive Steps:
+
+        Subtracting Phase: If temp > 0 and we’re not in the adding phase, we subtract 5.
+        Adding Phase: Once temp is 0 or negative, we start adding 5 until we reach the original number.
+        * */
+
+    public static int modifyNumberBySubtractingFive(int num) {
+        if(num<=0) {
+            return modifyNumberBySubtractingFive(num+5);
+        }
+        return num;
     }
 
     public static boolean primeNumberRecursively(int num, int divisor) {
