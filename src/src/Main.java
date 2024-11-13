@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        isPalindrome(121);
         fibonacci(input);
         findPrimeNumbers();
         reverseTriangle(input);
@@ -37,6 +38,20 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    public static boolean isPalindrome(int number) {
+        int temp = number;
+        int reverseNumber = 0;
+
+        while (temp != 0) {
+            reverseNumber = (reverseNumber * 10) + (temp % 10);
+            temp /= 10;
+        }
+
+        boolean isPalindrome = (reverseNumber == number);
+        System.out.println(number + (isPalindrome ? " is a Palindrome Number" : " is not a Palindrome Number"));
+        return isPalindrome;
     }
 
     public static void fibonacci(Scanner input) {
