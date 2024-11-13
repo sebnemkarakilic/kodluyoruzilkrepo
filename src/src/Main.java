@@ -4,6 +4,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        System.out.print("Enter to check prime number: ");
+        int primeNum = input.nextInt();
+        primeNumberRecursively(primeNum, 2);
+        if (primeNumberRecursively(primeNum, 2)) System.out.println(primeNum + " is a Prime Number");
+        else System.out.println(primeNum + " is not a Prime Number");
+
         System.out.print("Enter base number: ");
         int base = input.nextInt();
         System.out.print("Enter exponent number: ");
@@ -52,6 +58,19 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    public static boolean primeNumberRecursively(int num, int divisor) {
+        if (num <= 1) {
+            return false;
+        }
+        if (divisor == num) {
+            return true;
+        }
+        if (num % divisor == 0) {
+            return false;
+        }
+        return primeNumberRecursively(num, divisor + 1);
     }
 
     public static int calculatePowerRecursively(int base, int exponent) {
