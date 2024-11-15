@@ -6,6 +6,20 @@ public class Main {
 
         //OOP//
 
+        //===== SALARY SYSTEM =====//
+
+        Employee employee1 = new Employee("Kemal", 2000, 45, 1985);
+        System.out.println("Adı: " + employee1.name);
+        System.out.println("Maaşı: " + employee1.salary);
+        System.out.println("Çalışma Saati: " + employee1.workHours);
+        System.out.println("Başlangıç Yılı: " + employee1.hireYear);
+        System.out.println("Vergi: " + employee1.tax(employee1.salary));
+        System.out.println("Bonus: " + employee1.bonus(employee1.workHours));
+        System.out.println("Maaş Artışı: " + employee1.raiseSalary(employee1.hireYear, employee1.salary));
+        System.out.println("Vergi ve Bonuslar ile birlikte maaş: " + employee1.totalSalary);
+        System.out.println("Toplam Maaş: " + employee1.totalSalaryWithRaise);
+
+
         //===== BOKS =====//
 
         Fighter marc = new Fighter("Marc" , 15 , 100, 90, 0);
