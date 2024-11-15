@@ -6,6 +6,16 @@ public class Main {
 
         //OOP//
 
+        //===== BOKS =====//
+
+        Fighter marc = new Fighter("Marc" , 15 , 100, 90, 0);
+        Fighter alex = new Fighter("Alex" , 10 , 95, 100, 0);
+        Ring r = new Ring(marc,alex , 90 , 100);
+        r.run();
+        System.out.println();
+
+        //===== OGRENCI BILGI SISTEMI =====
+
         Course mat = new Course("Matematik", "MAT101", "MAT");
         Course fizik = new Course("Fizik", "FZK101", "FZK");
         Course kimya = new Course("Kimya", "KMY101", "KMY");
