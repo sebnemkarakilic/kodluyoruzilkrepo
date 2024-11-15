@@ -6,9 +6,6 @@ public class Student {
     Course kimya;
     double avarage;
     boolean isPass;
-    int matVerbal;
-    int fizikVerbal;
-    int kimyaVerbal;
     double matAvg;
     double kimAvg;
     double fizAvg;
@@ -45,20 +42,20 @@ public class Student {
     public void addVerbalExamNote(int matVerbal, int fizikVerbal, int kimyaVerbal) {
 
         if (matVerbal >= 0 && matVerbal <= 100) {
-            this.matVerbal = matVerbal;
+            this.mat.verbalNote = matVerbal;
         }
 
         if (fizikVerbal >= 0 && fizikVerbal <= 100) {
-            this.fizikVerbal = fizikVerbal;
+            this.fizik.verbalNote = fizikVerbal;
         }
 
         if (kimyaVerbal >= 0 && kimyaVerbal <= 100) {
-            this.kimyaVerbal = kimyaVerbal;
+            this.kimya.verbalNote = kimyaVerbal;
         }
     }
 
     public void isPass() {
-        if (this.mat.note == 0 || this.fizik.note == 0 || this.kimya.note == 0 || this.matVerbal == 0 || this.fizikVerbal == 0 || this.kimyaVerbal == 0) {
+        if (this.mat.note == 0 || this.fizik.note == 0 || this.kimya.note == 0 || this.mat.verbalNote == 0 || this.fizik.verbalNote == 0 || this.kimya.verbalNote == 0) {
             System.out.println("Notlar tam olarak girilmemiş");
         } else {
             this.isPass = isCheckPass();
@@ -84,17 +81,17 @@ public class Student {
     }
 
     public void avgNotes() {
-        this.matAvg = (this.mat.note * 0.8) + (this.matVerbal * 0.2);
-        this.fizAvg = (this.fizik.note * 0.8) + (this.fizikVerbal * 0.2);
-        this.kimAvg = (this.kimya.note * 0.8) + (this.kimyaVerbal * 0.2);
+        this.matAvg = (this.mat.note * 0.8) + (this.mat.verbalNote * 0.2);
+        this.fizAvg = (this.fizik.note * 0.8) + (this.fizik.verbalNote * 0.2);
+        this.kimAvg = (this.kimya.note * 0.8) + (this.kimya.verbalNote * 0.2);
     }
 
     public void printNote(){
         System.out.println("=========================");
         System.out.println("Öğrenci : " + this.name);
         avgNotes();
-        System.out.println("Matematik Yazili Notu : " + this.mat.note + " / Matematik Sözlü Notu : " + this.matVerbal + " / Matematik Dersi Ortalama Notu : " + this.matAvg);
-        System.out.println("Fizik Yazili Notu : " + this.fizik.note + " / Fizik Sözlü Notu : " + this.fizikVerbal + " / Fizik Dersi Ortalama Notu : " + this.fizAvg);
-        System.out.println("Kimya Yazili Notu : " + this.kimya.note + " / Kimya Sözlü Notu : " + this.kimyaVerbal + " / Kimya Dersi Ortalama Notu : " + this.kimAvg);
+        System.out.println("Matematik Yazili Notu : " + this.mat.note + " / Matematik Sözlü Notu : " + this.mat.verbalNote + " / Matematik Dersi Ortalama Notu : " + this.matAvg);
+        System.out.println("Fizik Yazili Notu : " + this.fizik.note + " / Fizik Sözlü Notu : " + this.fizik.verbalNote + " / Fizik Dersi Ortalama Notu : " + this.fizAvg);
+        System.out.println("Kimya Yazili Notu : " + this.kimya.note + " / Kimya Sözlü Notu : " + this.kimya.verbalNote + " / Kimya Dersi Ortalama Notu : " + this.kimAvg);
     }
 }
