@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        findTranspose();
+
         findFrequency();
         sortMinToMax(input);
         findRepeatingNumbersInArray();
@@ -125,6 +127,40 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    public static void findTranspose() {
+        int[][] arr = new int[2][3];
+
+        arr[0][0] = 2;
+        arr[0][1] = 3;
+        arr[0][2] = 4;
+        arr[1][0] = 5;
+        arr[1][1] = 6;
+        arr[1][2] = 7;
+
+        for (int[] i : arr) {
+            for (int j : i) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("- Transpose -");
+
+        // Dimensions of the transposed array
+        int rows = arr.length;
+        int cols = arr[0].length;
+        int[][] transposed = new int[cols][rows];
+
+        for (int i = 0; i < cols; i++) {
+            for (int j = 0; j < rows; j++) {
+                transposed[i][j] = arr[j][i];
+                System.out.print(transposed[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 
     public static void findFrequency() {
