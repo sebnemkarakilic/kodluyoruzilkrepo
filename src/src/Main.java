@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        findAverageOfElements();
+
         //OOP//
 
         //===== SALARY SYSTEM =====//
@@ -118,6 +120,23 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    public static void findAverageOfElements() {
+        int[] array = {1, 2, 3, 4, 5};
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+
+        System.out.println("AVG: " + sum / array.length);
+
+        double harSum = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            harSum += (double) 1 / array[i];
+        }
+        System.out.println("Harmonic AVG: " + array.length / harSum);
     }
 
     public static void modifyNumberRecursively(int temp, int original, boolean addingBack) {
