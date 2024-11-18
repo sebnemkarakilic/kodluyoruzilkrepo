@@ -1,9 +1,10 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
+        findMinAndMaxArray(input);
         findAverageOfElements();
 
         //OOP//
@@ -122,19 +123,61 @@ public class Main {
 
     }
 
+    public static void findMinAndMaxArray(Scanner input){
+        int[] list = {56, 34, 1, 8, 101, -2, -33};
+
+        int min = list[0];
+        int max = list[0];
+
+        for (int i : list) {
+            if (i < min) {
+                min = i;
+            }
+            if (i > max) {
+                max = i;
+            }
+        }
+
+        System.out.println("Minimum Değer " + min);
+        System.out.println("Maximum Değer " + max);
+
+        int[] array = {15,12,788,1,-1,-778,2,0};
+
+        System.out.print("Enter a number: ");
+        int num = input.nextInt();
+
+        Arrays.sort(array);
+
+        if (num < array[0]) {
+            System.out.println("No smaller number found.");
+            System.out.println("Closest larger number: " + array[0]);
+        } else if (num > array[array.length - 1]) {
+            System.out.println("Closest smaller number: " + array[array.length - 1]);
+            System.out.println("No larger number found.");
+        } else {
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] > num) {
+                    System.out.println("Closest smaller number: " + array[i - 1]);
+                    System.out.println("Closest larger number: " + array[i]);
+                    break;
+                }
+            }
+        }
+    }
+
     public static void findAverageOfElements() {
         int[] array = {1, 2, 3, 4, 5};
         int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
+        for (int j : array) {
+            sum += j;
         }
 
         System.out.println("AVG: " + sum / array.length);
 
         double harSum = 0;
 
-        for (int i = 0; i < array.length; i++) {
-            harSum += (double) 1 / array[i];
+        for (int j : array) {
+            harSum += (double) 1 / j;
         }
         System.out.println("Harmonic AVG: " + array.length / harSum);
     }
