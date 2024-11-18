@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        findFrequency();
         sortMinToMax(input);
         findRepeatingNumbersInArray();
         printLettesWithMultidimensionalArrays();
@@ -124,6 +125,33 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    public static void findFrequency() {
+        int[] arr = {10, 20, 20, 10, 10, 20, 5, 20};
+        int[] dontRepeat = new int[arr.length];
+        int isRepeated = 0;
+
+        for(int i = 0; i<arr.length;i++){
+            int counter = 1;
+            boolean alreadyPrinted = false;
+            for (int j = 0; j < isRepeated; j++) {
+                if (dontRepeat[j] == arr[i]) {
+                    alreadyPrinted = true;  // This number has already been printed
+                    break;
+                }
+            }
+            if(!alreadyPrinted){
+                dontRepeat[isRepeated] = arr[i];
+                isRepeated++;
+                for(int j = i+1; j<arr.length; j++){
+                    if(arr[j] == arr[i]){
+                        counter ++;
+                    }
+                }
+                System.out.println(arr[i] + " sayisi " + counter + " kere tekrar edildi.");
+            }
+        }
     }
 
     public static void sortMinToMax(Scanner input) {
