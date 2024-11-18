@@ -132,7 +132,7 @@ public class Main {
         int[] dontRepeat = new int[arr.length];
         int isRepeated = 0;
 
-        for(int i = 0; i<arr.length;i++){
+        for (int i = 0; i < arr.length; i++) {
             int counter = 1;
             boolean alreadyPrinted = false;
             for (int j = 0; j < isRepeated; j++) {
@@ -141,12 +141,12 @@ public class Main {
                     break;
                 }
             }
-            if(!alreadyPrinted){
+            if (!alreadyPrinted) {
                 dontRepeat[isRepeated] = arr[i];
                 isRepeated++;
-                for(int j = i+1; j<arr.length; j++){
-                    if(arr[j] == arr[i]){
-                        counter ++;
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[j] == arr[i]) {
+                        counter++;
                     }
                 }
                 System.out.println(arr[i] + " sayisi " + counter + " kere tekrar edildi.");
