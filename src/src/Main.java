@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        findRepeatingNumbersInArray();
         printLettesWithMultidimensionalArrays();
         findMinAndMaxArray(input);
         findAverageOfElements();
@@ -124,6 +125,36 @@ public class Main {
 
     }
 
+    public static void findRepeatingNumbersInArray() {
+        int[] array = {3, 7, 3, 3, 2, 9, 10, 21, 1, 33, 9, 1};
+        int[] repeatingNumbers = new int[array.length];
+        int isRepeated = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            // Skip the current element if it's already checked
+            boolean alreadyPrinted = false;
+            for (int j = 0; j < isRepeated; j++) {
+                if (repeatingNumbers[j] == array[i]) {
+                    alreadyPrinted = true;  // This number has already been printed
+                    break;
+                }
+            }
+            if (!alreadyPrinted) {
+                for (int j = i + 1; j < array.length; j++) {
+                    if (array[j] == array[i]) {
+                        repeatingNumbers[isRepeated] = array[i];
+                        isRepeated++;
+                        break;
+                    }
+                }
+            }
+        }
+            System.out.print("Repeating numbers: ");
+            for (int i = 0; i < isRepeated; i++) {
+                System.out.print(repeatingNumbers[i] + " ");
+            }
+            System.out.println();
+    }
     public static void printLettesWithMultidimensionalArrays() {
         String[][] letter = new String[7][5];
 
