@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        printLettesWithMultidimensionalArrays();
         findMinAndMaxArray(input);
         findAverageOfElements();
 
@@ -121,6 +122,32 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    public static void printLettesWithMultidimensionalArrays() {
+        String[][] letter = new String[7][5];
+
+        for (int i = 0; i < letter.length; i++) {
+            for (int j = 0; j < letter[i].length; j++) {
+                if (i == 0 || i == 3 || i == 6) {
+                    letter[i][j] = " * ";
+                    letter[0][4] = "   ";
+                    letter[3][4] = "   ";
+                    letter[6][4] = "   ";
+                } else if (j == 0 || j == 4) {
+                    letter[i][j] = " * ";
+                } else {
+                    letter[i][j] = "   ";
+                }
+            }
+        }
+
+        for (String[] row : letter){
+            for (String col : row){
+                System.out.print(col);
+            }
+            System.out.println();
+        }
     }
 
     public static void findMinAndMaxArray(Scanner input){
