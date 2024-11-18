@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        sortMinToMax(input);
         findRepeatingNumbersInArray();
         printLettesWithMultidimensionalArrays();
         findMinAndMaxArray(input);
@@ -123,6 +124,37 @@ public class Main {
         calculateVAT(input);
         calculateGPA(input);
 
+    }
+
+    public static void sortMinToMax(Scanner input) {
+        System.out.print("Dizinin boyutu n: ");
+        int length = input.nextInt();
+        int[] arr = new int[length];
+
+        for (int i = 0; i < length; i++) {
+            System.out.print(i + 1 + ". Eleman: ");
+            arr[i] = input.nextInt();
+
+        }
+
+        Arrays.sort(arr);
+
+        // Bubble Sort Algorithm
+        /*for (int i = 0; i < length - 1; i++) {
+            for (int j = 0; j < length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // Swap the elements if they are in the wrong order
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        } */
+
+        for (int value : arr) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
     }
 
     public static void findRepeatingNumbersInArray() {
